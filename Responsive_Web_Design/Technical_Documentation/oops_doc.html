@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<body>
+  <nav id="navbar">
+    <header id="title">
+      OOP's
+    </header>
+    <ul id="left_list">
+      <li><a class="nav-link" href="#About">About</a></li>
+    <li><a class="nav-link" href="#Classes_and_Objects">Classes and Objects</a></li>
+        <li><a class="nav-link" href="#Encapsulation">Encapsulation</a></li>
+            
+                <li><a class="nav-link" href="#Inheritance">Inheritance</a></li>
+                    <li><a class="nav-link" href="#Polymorphism">Polymorphism</a></li>
+                    <li><a class="nav-link" href="#Method_Overloading">Method Overloading</a></li>   
+  </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="About">
+      <header class="topic">About</header>
+      <p>
+        Object-Oriented Programming (OOP) is a programming paradigm centered around the concept of objects.</p> 
+       <p> Objects are instances of classes, which encapsulate both data (attributes) and functions (methods). </p>
+       <p> OOP promotes code organization, reusability, and abstraction. </p>
+       <p> Key features include :
+         <li id="no-change">Classes and Objects</li> 
+         <li id="no-change">Encapsulation</li>
+         <li id="no-change">Abstraction</li>
+         <li id="no-change">Inheritance</li>
+         <li id="no-change">Polymorphism</li>
+         </p>
+         <p> OOP aligns with real-world modeling and enhances software development by fostering modularity and maintainability.
+      </p>
+    </section>
+    <section class="main-section" id="Classes_and_Objects">
+      <header class="topic">Classes and Objects</header>
+      <p>
+        In Object-Oriented Programming (OOP), classes and objects are fundamental concepts that allow developers to model real-world entities and their behaviors in a structured manner. Here's an overview of classes and objects:</p>
+
+<p>Class:</p>
+<p>A class is a blueprint or template that defines the structure and behavior of objects. It encapsulates both data attributes (properties) and methods (functions) that operate on that data. Classes act as a blueprint for creating multiple instances of objects with similar characteristics and behaviors. They provide a way to define the common attributes and behaviors that different objects of the same type share.</p>
+
+<p>Object:</p>
+<p>An object is an instance of a class. It represents a specific, tangible or conceptual entity. Objects have their own unique data attributes, often referred to as instance variables, which hold the object's state. They can also perform actions or behaviors through the methods defined in their class. Objects allow you to interact with and manipulate data in a modular and organized manner.</p>
+
+<p>Here's a simple analogy to help understand the relationship between classes and objects: Consider the class as a blueprint for a house, complete with design specifications and plans. An object, in this case, would be an actual house built based on that blueprint. Multiple houses can be constructed using the same blueprint (class), but each house (object) will have its own unique characteristics and features.
+      
+      </p>
+      <p><code>
+        class Car:def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start_engine(self):
+        print(f"The {self.make} {self.model}'s engine is now running.")
+
+# Creating objects (instances) of the Car class
+car1 = Car("Toyota", "Camry")
+car2 = Car("Ford", "Mustang")
+
+# Accessing object attributes and calling methods
+print(car1.make)  # Output: Toyota
+car2.start_engine()  # Output: The Ford Mustang's engine is now running.
+</code></p>
+      
+    </section>
+    <section class="main-section" id="Encapsulation">
+      <header class="topic">Encapsulation</header>
+      <p>Encapsulation is a fundamental principle in Object-Oriented Programming (OOP) that involves bundling data (attributes) and methods (functions) that operate on that data into a single unit, often referred to as a "class."</p> <p>The main purpose of encapsulation is to control access to an object's internal state and behavior, ensuring that the object's integrity is maintained and its details are hidden from outside interference.</p>
+      <p><code>
+        public class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+</code></p>
+    </section>
+    <section class="main-section" id="Inheritance">
+      <header class="topic">Inheritance</header>
+      <p>Inheritance is a key concept in Object-Oriented Programming (OOP) that allows a new class to inherit attributes and behaviors from an existing class. The existing class is often referred to as the "superclass" or "base class," and the new class is known as the "subclass" or "derived class."</p> <p>Inheritance establishes a hierarchical relationship between classes, enabling code reuse and the creation of specialized classes based on a common foundation.</p>
+      <p><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+print(dog.speak())  # Output: Buddy says Woof!
+print(cat.speak())  # Output: Whiskers says Meow!
+
+      </code></p>
+    </section>
+    <section class="main-section" id="Polymorphism">
+      <header class="topic">Polymorphism</header>
+      <p>Polymorphism is a crucial concept in Object-Oriented Programming (OOP) that allows objects of different classes to be treated as instances of a common superclass. It enables you to use a single interface to represent a group of related classes, promoting code flexibility and extensibility.</p> <p>Polymorphism is closely linked with inheritance and the idea of having a consistent interface for diverse objects.</p>
+      <p><code>
+        class Shape {
+    void draw() {
+        System.out.println("Drawing a shape.");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a square.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Square();
+        
+        shape1.draw();  // Output: Drawing a circle.
+        shape2.draw();  // Output: Drawing a square.
+    }
+}
+
+      </code></p>
+    </section>
+    <section class="main-section" id="Method_Overloading">
+      <header class="topic">Method Overloading</header>
+      <p>Method overloading is a feature in Object-Oriented Programming (OOP) languages that allows a single class to define multiple methods with the same name but different parameter lists. These methods are distinguished by the number, type, or order of their parameters.</p> <p>Method overloading enhances code readability, flexibility, and ease of use by providing a more intuitive and consistent interface.</p>
+      <p><code>
+        class Geometry {
+    double calculateArea(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    double calculateArea(double length, double width) {
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Geometry geometry = new Geometry();
+        
+        double circleArea = geometry.calculateArea(5.0);  // Calculates area of a circle
+        double rectangleArea = geometry.calculateArea(4.0, 6.0);  // Calculates area of a rectangle
+        
+        System.out.println("Circle Area: " + circleArea);  // Output: Circle Area: 78.53981633974483
+        System.out.println("Rectangle Area: " + rectangleArea);  // Output: Rectangle Area: 24.0
+    }
+}
+
+      </code></p>
+      <p><code>
+        class Display {
+    void showInfo(String message) {
+        System.out.println("Message: " + message);
+    }
+
+    void showInfo(int number) {
+        System.out.println("Number: " + number);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Display display = new Display();
+        
+        display.showInfo("Hello, world!");  // Displays a message
+        display.showInfo(42);  // Displays a number
+        
+        // Output:
+        // Message: Hello, world!
+        // Number: 42
+    }
+}
+
+      </code></p>
+    </section>
+
+  </main>
+</body>

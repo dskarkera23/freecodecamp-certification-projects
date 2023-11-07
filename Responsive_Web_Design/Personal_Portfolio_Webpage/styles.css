@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(202,226,233);
+background: radial-gradient(circle, rgba(202,226,233,1) 13%, rgba(158,182,184,1) 69%, rgba(80,93,97,1) 100%);
+}
+
+#welcome-section h1 {
+    font-size: 46px;
+    color: #333;
+    font-family:  Serif;
+    
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: Monospace;
+    font-size: 20px
+}
+
+#profile-link {
+    display: block;
+    margin: 30px auto;
+    text-decoration: none;
+    color: #333;
+}
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    padding: 50px;
+    background-color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    
+}
+
+.projects-grid a {
+    display: block;
+    text-decoration: none;
+    
+    border: 2px solid #AFDBF5;
+    padding: 20px 40px;
+    transition: transform 0.3s ease-in-out;
+    font-family: Monospace ;
+    font-size: 20px;
+    color: #AFDBF5;
+}
+
+.projects-grid a:hover {
+    transform: scale(1.05);
+    background-color: #AFDBF5;
+    color: black;
+}
+.projects-grid img {
+    width: 100%;
+    aspect-ratio: 9/8;
+    object-fit: contain;
+}
+.project-image {
+    display: block;
+    width: 275px;
+    margin: 0 auto;
+}
+#profile-det {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    font-family: monospace;
+    font-size: 20px
+
+}
+@media (max-width: 768px) {
+body {
+        font-size: 14px;
+    }
+
+    #welcome-section {
+        height: 300px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    #welcome-section h1 {
+        font-size: 35px;
+    }
+
+    #navbar {
+        padding: 5px;
+    }
+
+    #navbar a {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    #profile-link {
+        margin: 20px auto;
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid a {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .project-image {
+        width: 200px;
+    }
+
+    #profile-det {
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+    }
+}
